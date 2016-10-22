@@ -1,0 +1,25 @@
+{
+  "name": "sharepoint_rest_api",
+  "version": "1.0.0",
+  "description": "A README.md file is intended to quickly orient readers to what your project can do.  New to Markdown? [Learn more](https://go.microsoft.com/fwlink/p/?LinkId=524306&clcid=0x409)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.17.5",
+    "browserify": "^13.1.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.0.2",
+    "gulp-uglify": "^2.0.0",
+    "require-dir": "^0.3.1",
+    "tsify": "^2.0.2",
+    "typescript": "^2.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}
