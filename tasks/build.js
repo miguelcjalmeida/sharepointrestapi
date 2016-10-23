@@ -13,11 +13,11 @@ module.exports = gulp.task('build', ['clean'], () => {
         standalone: 'SPRepo',
         debug : true,
     })
-        .plugin(tsify).transform('babelify', { extensions: ['.ts'] })
-        .bundle()
-        .pipe(source('sprestrepo.js'))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(rename({ extname: '.min.js' }))
-        .pipe(gulp.dest('./samples/js'));
+    .plugin(tsify).transform('babelify', { extensions: ['.ts'] })
+    .bundle()
+    .pipe(source('sprestrepo.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(gulp.dest('./samples/js'));
 })

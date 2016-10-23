@@ -1,4 +1,2 @@
-import { SPRestRepository } from './SPRestRepository';
+export * from './SPRestRepository'
 
-
-export = SPRestRepository
