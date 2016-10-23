@@ -7,6 +7,22 @@
 
 <body>
 	<h1> Hello World </h1>
+	<p>Check your console log</p>
+	<p>The following code has been executed: </p>
+	<pre>
+		<code>
+	var repository = new SPRepo.SPRestRepository()
+	document.getElementById("output").innerText = JSON.stringify(repository);
+	console.log(repository)
+		</code>
+	</pre>
+	<p>output: </p>
+	<div id="output"></div>
+	<script type="text/javascript">
+		var repository = new SPRepo.SPRestRepository()
+		document.getElementById("output").innerText = JSON.stringify(repository);
+		console.log(repository)
+	</script>
 </body>
 
 </html>
