@@ -1,23 +1,25 @@
-import { SPBaseExecution } from './base/SPBaseExecution'
-import { ISPRestRepository } from './interface/ISPRestRepository'
+import { ISPRestRepository } from './Interfaces'
+import { ListItem } from './SPListItem/ListItem'
 
 /**
  * @namespace
  */
-export class SPRestRepository extends SPBaseExecution implements ISPRestRepository {
-    ListTitle: string;
-    ListRelativeUrl: string;
+export class SPRestRepository implements ISPRestRepository {
 
-    /** @constructor
-     * inicializa o repositório para a Lista informada;
-     * @param {string} listTitle - Título da lista que deseja recuperar informações;
-     * @param {string} relativeUrl - URL relativa de onde se encontra a lista. Caso seja passado  'null' então é considerado o root do portal;
-     */
-    constructor(listTitle: string, relativeUrl: string) {
-        super(listTitle, relativeUrl);
+    private _listItem: ListItem = null;
+    get ListItem(): ListItem {
+        return this._listItem;
+    }
+    set ListItem(value: ListItem) {
+        this._listItem = value;
     }
 
-    helloWorld() {
-        console.log('hi there');
+    /** @constructor
+     * initialize the repostory to the list informed;
+     * @param {string} listTitle - List Title or Documento Library url name;
+     * @param {string} relativeUrl - Relative url for the list or document library. If this parameter is null, then the relative url is ROOT ( '/' );
+     */
+    constructor(listTitle: string, relativeUrl: string) {
+        this.ListItem = new ListItem(listTitle, relativeUrl);
     }
 }
