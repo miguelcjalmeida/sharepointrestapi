@@ -7,10 +7,11 @@ var buffer = require('vinyl-buffer')
 var babelify = require('babelify');
 var uglify = require('gulp-uglify');
 
-module.exports = gulp.task('build', () => {
+module.exports = gulp.task('build', ['clean'], () => {
     return browserify({
         entries: './src/main.ts',
-        standalone: 'pisprepo',
+        standalone: 'SPRepo',
+        debug : true,
     })
         .plugin(tsify).transform('babelify', { extensions: ['.ts'] })
         .bundle()
@@ -18,5 +19,5 @@ module.exports = gulp.task('build', () => {
         .pipe(buffer())
         .pipe(uglify())
         .pipe(rename({ extname: '.min.js' }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./samples/js'));
 })
