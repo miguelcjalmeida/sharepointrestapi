@@ -5,7 +5,7 @@ var bsync = require('browser-sync').create();
 gulp.task('serve', () => {
     bsync.init({
         server : {
-            baseDir : './'
+            baseDir : './samples'
         }
     })
 })
